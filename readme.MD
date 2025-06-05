@@ -27,4 +27,10 @@ This project demonstrates how to orchestrate a data transformation pipeline usin
 To run Dagster on your local machine:
 
 ```bash
-dagster dev -h 0.0.0.0 -p 3000
+docker-compose up --build
+
+## Screenshots
+
+Here is an example screenshot from the project:
+
+![Example Screenshot](python/screenshots/example_screenshot.png)

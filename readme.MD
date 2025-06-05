@@ -34,4 +34,4 @@ docker-compose up --build
 
 Here is an example screenshot from the project:
 
-![Example Screenshot](python/screenshots/dagster.png)
+![Example Screenshot](Python/Screenshots/dagster.png)

@@ -28,9 +28,10 @@ To run Dagster on your local machine:
 
 ```bash
 docker-compose up --build
-'''
+
+
 ## Screenshots
 
 Here is an example screenshot from the project:
 
-![Example Screenshot](python/screenshots/example_screenshot.png)
+![Example Screenshot](python/screenshots/dagster.png)

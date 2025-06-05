@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  dbt:
+    build:
+      context: ./python
+    container_name: dbt_runner
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    volumes:
+      #- ./dbtlearn:/dbt            # Mount dbt project to /dbt
+      - pip_cache:/root/.cache/pip
+      #- ./dbt_dagster_project:/dagster
+      #- ./dbtlearn:/app/dbt
+      - ../dbt_dagster_pipeline:/dbt_dagster_pipeline
+    working_dir: /dbt_dagster_pipeline
+    environment:
+      DBT_PROFILES_DIR: /dbt_dagster_pipeline/dbtlearn       # dbt will look here for profiles.yml
+
+volumes:
+  pgdata:
+  pip_cache:

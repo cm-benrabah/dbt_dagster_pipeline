@@ -29,6 +29,13 @@ To run Dagster on your local machine:
 ```bash
 docker-compose up --build
 ```
+## Running the App
+
+After starting the application, you can access it in your browser at:
+
+[http://localhost:3000](http://localhost:3000)
+
+Make sure the app is running (e.g., via `docker-compose up` ) before opening the link.
 
 ## Screenshots
 
